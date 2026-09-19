@@ -1,2 +1,2 @@
 # Calculator
-Pengembangan kalkulator menggunakan berbagai macam bahasa 
+Pengembangan kalkulator menggunakan berbagai macam bahasa pemrograman.
