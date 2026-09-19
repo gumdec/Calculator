@@ -32,3 +32,36 @@ Kode ini merupakan seleksi sesuai input user.
 }
 ```
 ketika user menginput operator di luar yang tersedia maka output akan diberikan seperti ini.
+## Flowchart
+```{mermaid}
+graph TD
+    Start([Mulai]) --> InputOp[/Input operator +, -, x, :/]
+    
+    %% Cek Penjumlahan
+    InputOp --> CekTambah{operasi == "+"}
+    CekTambah -- Ya --> InputNilaiTambah[/Input nilai yang akan dijumlahkan/]
+    InputNilaiTambah --> OutputTambah[/Tampilkan: Jumlah bilangan/]
+    OutputTambah --> Selesai([Selesai])
+    
+    %% Cek Pengurangan
+    CekTambah -- Tidak --> CekKurang{operasi == "-"}
+    CekKurang -- Ya --> InputNilaiKurang[/Input nilai yang akan dikurangkan/]
+    InputNilaiKurang --> OutputKurang[/Tampilkan: Hasil operasi pengurangan/]
+    OutputKurang --> Selesai
+    
+    %% Cek Perkalian
+    CekKurang -- Tidak --> CekKali{operasi == "x"}
+    CekKali -- Ya --> InputNilaiKali[/Input nilai yang akan dikalikan/]
+    InputNilaiKali --> OutputKali[/Tampilkan: Hasil operasi perkalian/]
+    OutputKali --> Selesai
+    
+    %% Cek Pembagian
+    CekKali -- Tidak --> CekBagi{operasi == ":"}
+    CekBagi -- Ya --> InputNilaiBagi[/Input nilai yang akan dibagi/]
+    InputNilaiBagi --> OutputBagi[/Tampilkan: Hasil operasi pembagian/]
+    OutputBagi --> Selesai
+    
+    %% Jika tidak ada yang cocok (Else)
+    CekBagi -- Tidak --> OutputError[/Tampilkan: Operasi tidak tersedia/]
+    OutputError --> Selesai
+```
